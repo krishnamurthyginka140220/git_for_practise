@@ -5,9 +5,6 @@
 		"factoryName": {
 			"value": "kittuADF6666"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"value": ""
-		},
 		"containerUri": {
 			"value": ""
 		},
