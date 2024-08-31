@@ -2,7 +2,9 @@
 	"name": "kittuADF6666",
 	"properties": {
 		"globalConfigurations": {
-			"PipelineBillingEnabled": "true"
+			"PipelineBillingEnabled": "false",
+			"factoryStagingLSReferenceName": "linkedService1",
+			"factoryStagingLSType": "LinkedServiceReference"
 		}
 	},
 	"location": "southindia",
