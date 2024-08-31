@@ -1,0 +1,9 @@
+{
+	"name": "kittuADF6666",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bf5372d8-1159-4488-839d-8ba35e9ded7f",
+		"tenantId": "41f3e05c-d51c-4926-b028-e02d7446716f"
+	}
+}
