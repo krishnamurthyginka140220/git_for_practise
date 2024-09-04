@@ -29,15 +29,32 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "st",
-					"value": {
-						"value": "@pipeline().TriggerTime",
-						"type": "Expression"
-					}
+					"value": "[object Object]"
 				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
 			}
 		],
 		"variables": {
 			"st": {
+				"type": "String"
+			},
+			"sct": {
 				"type": "String"
 			}
 		},
