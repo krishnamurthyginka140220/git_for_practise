@@ -10,6 +10,14 @@
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"xxx_properties_pipeline1_parameters_sc": {
+			"type": "string",
+			"defaultValue": "@trigger().scheduledTime"
+		},
+		"xxx_properties_pipeline1_parameters_st": {
+			"type": "string",
+			"defaultValue": "@trigger().startTime"
 		}
 	},
 	"variables": {
@@ -174,7 +182,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/xxx')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -186,7 +194,10 @@
 							"referenceName": "pipeline1",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"sc": "[parameters('xxx_properties_pipeline1_parameters_sc')]",
+							"st": "[parameters('xxx_properties_pipeline1_parameters_st')]"
+						}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -194,7 +205,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 1,
-						"startTime": "2024-09-04T05:14:00",
+						"startTime": "2024-09-04T05:53:00",
 						"timeZone": "India Standard Time"
 					}
 				}
