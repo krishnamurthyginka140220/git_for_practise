@@ -10,46 +10,16 @@
 				"typeProperties": {
 					"waitTimeInSeconds": 1
 				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Wait1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "st",
-					"value": "[object Object]"
-				}
-			},
-			{
-				"name": "Set variable2",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Set variable1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": []
 			}
 		],
+		"parameters": {
+			"sc": {
+				"type": "string"
+			},
+			"st": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"st": {
 				"type": "String"
