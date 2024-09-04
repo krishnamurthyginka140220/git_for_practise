@@ -7,12 +7,6 @@
 		},
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
-		},
-		"xxx_properties_pipeline1_parameters_sc": {
-			"value": "@trigger().scheduledTime"
-		},
-		"xxx_properties_pipeline1_parameters_st": {
-			"value": "@trigger().startTime"
 		}
 	}
 }
