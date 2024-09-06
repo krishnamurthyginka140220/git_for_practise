@@ -10,16 +10,13 @@
 		},
 		"parameters": {
 			"c": {
-				"type": "string",
-				"defaultValue": "sasource"
+				"type": "string"
 			},
 			"d": {
-				"type": "string",
-				"defaultValue": "csv"
+				"type": "string"
 			},
 			"fn": {
-				"type": "string",
-				"defaultValue": "file_1.csv"
+				"type": "string"
 			}
 		},
 		"annotations": [],
