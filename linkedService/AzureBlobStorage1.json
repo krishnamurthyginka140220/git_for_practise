@@ -3,8 +3,7 @@
 	"properties": {
 		"parameters": {
 			"san": {
-				"type": "string",
-				"defaultValue": "sakittu"
+				"type": "string"
 			}
 		},
 		"annotations": [],
