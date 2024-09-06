@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "kittuADF6666"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": "DefaultEndpointsProtocol=https;AccountName=@{linkedService().san};"
+		},
 		"AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://kittusecrets.vault.azure.net/"
 		},
