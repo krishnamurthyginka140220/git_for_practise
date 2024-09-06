@@ -5,8 +5,8 @@
 		"factoryName": {
 			"value": "kittuADF6666"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"value": ""
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://kittusecrets.vault.azure.net/"
 		},
 		"containerUri": {
 			"value": ""

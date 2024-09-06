@@ -4,6 +4,9 @@
 	"parameters": {
 		"factoryName": {
 			"value": "kittuADF6666"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://kittusecrets.vault.azure.net/"
 		}
 	}
 }

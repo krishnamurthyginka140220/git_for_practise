@@ -7,9 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "kittuADF6666"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kittusecrets.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -17,14 +17,14 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"name": "[concat(parameters('factoryName'), '/AzureKeyVault')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"type": "AzureBlobStorage",
+				"type": "AzureKeyVault",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+					"baseUrl": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
