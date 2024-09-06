@@ -1,0 +1,190 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Age",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Salary",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Salary",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference",
+						"parameters": {
+							"cn": {
+								"value": "@pipeline().parameters.cn_p",
+								"type": "Expression"
+							},
+							"dn": {
+								"value": "@pipeline().parameters.dir_p",
+								"type": "Expression"
+							},
+							"fn": {
+								"value": "@pipeline().parameters.fn_p",
+								"type": "Expression"
+							},
+							"storageaccnam": {
+								"value": "@pipeline().parameters.sa_p",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference",
+						"parameters": {
+							"cn": {
+								"value": "@pipeline().parameters.cn_p",
+								"type": "Expression"
+							},
+							"dn": {
+								"value": "@pipeline().parameters.des_dirn_p",
+								"type": "Expression"
+							},
+							"fn": {
+								"value": "@pipeline().parameters.dfn_p",
+								"type": "Expression"
+							},
+							"storageaccnam": {
+								"value": "@pipeline().parameters.sa_p",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"cn_p": {
+				"type": "string",
+				"defaultValue": "sasource"
+			},
+			"sa_p": {
+				"type": "string",
+				"defaultValue": "sakittu"
+			},
+			"dir_p": {
+				"type": "string",
+				"defaultValue": "csv"
+			},
+			"fn_p": {
+				"type": "string",
+				"defaultValue": "file_1.csv"
+			},
+			"des_dirn_p": {
+				"type": "string",
+				"defaultValue": "des"
+			},
+			"dfn_p": {
+				"type": "string",
+				"defaultValue": "filx.csv"
+			}
+		},
+		"annotations": []
+	}
+}
