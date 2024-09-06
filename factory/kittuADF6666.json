@@ -1,6 +1,12 @@
 {
 	"name": "kittuADF6666",
 	"properties": {
+		"globalParameters": {
+			"cn": {
+				"type": "string",
+				"value": "xxx"
+			}
+		},
 		"globalConfigurations": {
 			"PipelineBillingEnabled": "false",
 			"factoryStagingLSReferenceName": "linkedService1",
