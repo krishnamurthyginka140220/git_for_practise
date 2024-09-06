@@ -1,0 +1,75 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"tb": {
+								"value": "@concat(pipeline().parameters?.tbp2,pipeline().parameters.tbp)",
+								"type": "Expression"
+							},
+							"unn": {
+								"value": "@pipeline().parameters.unp",
+								"type": "Expression"
+							},
+							"snn": {
+								"value": "@pipeline().parameters.snp",
+								"type": "Expression"
+							},
+							"dbnn": {
+								"value": "@pipeline().parameters.dbp",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"tbp": {
+				"type": "string",
+				"defaultValue": "sales"
+			},
+			"snp": {
+				"type": "string",
+				"defaultValue": "kittuserver.database.windows.net"
+			},
+			"dbp": {
+				"type": "string",
+				"defaultValue": "kittudb"
+			},
+			"unp": {
+				"type": "string",
+				"defaultValue": "kittu23"
+			},
+			"tbp2": {
+				"type": "string",
+				"defaultValue": "xxxx"
+			}
+		},
+		"annotations": []
+	}
+}
