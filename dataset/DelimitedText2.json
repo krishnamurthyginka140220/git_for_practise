@@ -1,0 +1,53 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"san": {
+					"value": "@dataset().storageaccnam",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"cn": {
+				"type": "string"
+			},
+			"dn": {
+				"type": "string"
+			},
+			"fn": {
+				"type": "string"
+			},
+			"storageaccnam": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().fn",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().dn",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().cn",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
