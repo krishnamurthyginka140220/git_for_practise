@@ -8,14 +8,37 @@
 				"san": "sakittu"
 			}
 		},
+		"parameters": {
+			"c": {
+				"type": "string",
+				"defaultValue": "sasource"
+			},
+			"d": {
+				"type": "string",
+				"defaultValue": "csv"
+			},
+			"fn": {
+				"type": "string",
+				"defaultValue": "file_1.csv"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "file_1.csv",
-				"folderPath": "csv",
-				"container": "sasource"
+				"fileName": {
+					"value": "@dataset().fn",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().d",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().c",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
