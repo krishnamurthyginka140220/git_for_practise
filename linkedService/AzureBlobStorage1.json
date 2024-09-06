@@ -1,0 +1,24 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"parameters": {
+			"san": {
+				"type": "string",
+				"defaultValue": "sakittu"
+			}
+		},
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=@{linkedService().san};",
+			"accountKey": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "saaccesskey"
+			}
+		}
+	}
+}
