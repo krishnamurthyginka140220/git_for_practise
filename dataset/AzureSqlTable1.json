@@ -3,10 +3,33 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"un": {
+					"value": "@dataset().unn",
+					"type": "Expression"
+				},
+				"sn": {
+					"value": "@dataset().snn",
+					"type": "Expression"
+				},
+				"dbn": {
+					"value": "@dataset().dbnn",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"tb": {
+				"type": "string"
+			},
+			"unn": {
+				"type": "string"
+			},
+			"snn": {
+				"type": "string"
+			},
+			"dbnn": {
 				"type": "string"
 			}
 		},
