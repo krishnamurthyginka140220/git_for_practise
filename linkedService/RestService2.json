@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://restful-api.dev/",
+			"url": "https://reqres.in/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
