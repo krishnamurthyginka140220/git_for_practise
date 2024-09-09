@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://pokeapi.co/api/v2/pokemon",
+			"url": "https://pokeapi.co/api/v2/pokemon/?limit=20&offset={of}",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
