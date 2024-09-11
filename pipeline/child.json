@@ -42,6 +42,20 @@
 				}
 			}
 		],
+		"parameters": {
+			"cp": {
+				"type": "string",
+				"defaultValue": "kittu"
+			}
+		},
+		"variables": {
+			"h": {
+				"type": "Array"
+			},
+			"v": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
