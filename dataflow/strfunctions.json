@@ -1,0 +1,14 @@
+{
+	"name": "strfunctions",
+	"properties": {
+		"type": "UDFLibrary",
+		"typeProperties": {
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"rtrimwithlower(string) as string = lower(dropRight(i1,1))"
+			]
+		}
+	}
+}
